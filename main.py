@@ -67,8 +67,8 @@ def recevoir_data():
             .tag("site_id", site_id) \
             .tag("wan_status", wan_status) \
             .tag("wan_type", wan_type) \
-            .field("wan_ip", wan_ip) \
-            .field("wan_gateway", wan_gateway) \
+           .tag("wan_ip", wan_ip) \
+.tag("wan_gateway", wan_gateway) \
             .field("nb_clients", nb_clients) \
             .field("signal_moy", signal_moy) \
             .field("debit_wifi_mbps", debit_wifi) \

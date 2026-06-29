@@ -1,3 +1,4 @@
+import time  # en haut du fichier
 from flask import Flask, request, jsonify
 from influxdb_client import InfluxDBClient, Point
 from influxdb_client.client.write_api import SYNCHRONOUS
@@ -99,7 +100,7 @@ def recevoir_data():
                 f"ALERTE DEBIT FAIBLE - {site_id}",
                 f"Site : {site_id}\nDate : {now}\nDebit : {debit_kbps} Kbps\nSeuil : {SEUIL_DEBIT} Kbps"
             )
-
+      time.sleep(2)
         return jsonify({"status": "ok", "message": "Data saved"}), 200
 
     except Exception as e:

@@ -18,7 +18,7 @@ EMAIL_TO      = os.environ.get("EMAIL_TO", "")
 SEUIL_TEMP    = float(os.environ.get("SEUIL_TEMP", "40"))
 SEUIL_DEBIT   = float(os.environ.get("SEUIL_DEBIT", "100"))
 
-influx_client = InfluxDBClient(url=INFLUX_URL, token=INFLUX_TOKEN, org=INFLUX_ORG)
+influx_client = InfluxDBClient(url=INFLUX_URL, token=INFLUX_TOKEN, org=INFLUX_ORG, timeout=5000)
 write_api = influx_client.write_api(write_options=SYNCHRONOUS)
 
 def envoyer_alerte(sujet, message):
